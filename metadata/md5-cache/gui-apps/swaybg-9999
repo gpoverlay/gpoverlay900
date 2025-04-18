@@ -1,0 +1,14 @@
+BDEPEND=dev-util/wayland-scanner virtual/pkgconfig man? ( app-text/scdoc ) >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array >=dev-vcs/git-1.8.2.1[curl]
+DEFINED_PHASES=compile configure install test unpack
+DEPEND=dev-libs/wayland >=dev-libs/wayland-protocols-1.26 x11-libs/cairo gdk-pixbuf? ( x11-libs/gdk-pixbuf )
+DESCRIPTION=A wallpaper utility for Wayland
+EAPI=8
+HOMEPAGE=https://github.com/swaywm/swaybg
+INHERIT=meson git-r3
+IUSE=gdk-pixbuf +man
+LICENSE=MIT
+PROPERTIES=live
+RDEPEND=dev-libs/wayland >=dev-libs/wayland-protocols-1.26 x11-libs/cairo gdk-pixbuf? ( x11-libs/gdk-pixbuf )
+SLOT=0
+_eclasses_=flag-o-matic	e8de74bac929ba17427e740e95707d00	git-r3	875eb471682d3e1f18da124be97dcc81	meson	99466844dd8d4fcfb07578a76f5a9922	multiprocessing	1e32df7deee68372153dca65f4a7c21f	ninja-utils	2df4e452cea39a9ec8fb543ce059f8d6	python-utils-r1	d1be7a6de225276141d669742d56f3f3	toolchain-funcs	f9d71a6efe9d083aec750dd13968e169
+_md5_=dee9f093932152ed024e8cab548c1f3e
