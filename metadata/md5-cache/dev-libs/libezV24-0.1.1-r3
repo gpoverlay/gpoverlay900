@@ -1,0 +1,11 @@
+DEFINED_PHASES=install prepare
+DESCRIPTION=Library that provides an easy API to Linux serial ports
+EAPI=8
+HOMEPAGE=https://ezv24.sourceforge.net
+INHERIT=toolchain-funcs
+KEYWORDS=~alpha amd64 ppc sparc x86
+LICENSE=GPL-2+
+SLOT=0
+SRC_URI=https://downloads.sourceforge.net/ezv24/libezV24-0.1.1.tar.gz
+_eclasses_=toolchain-funcs	f9d71a6efe9d083aec750dd13968e169
+_md5_=0769284efa1bb1b9bd9685320af9e50e

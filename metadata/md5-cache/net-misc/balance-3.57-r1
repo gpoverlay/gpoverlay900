@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install postinst prepare
+DESCRIPTION=TCP Load Balancing Port Forwarder
+EAPI=8
+HOMEPAGE=https://balance.inlab.net
+IDEPEND=filecaps? ( sys-libs/libcap )
+INHERIT=fcaps flag-o-matic toolchain-funcs
+IUSE=+filecaps
+KEYWORDS=~amd64 ~ppc ~x86
+LICENSE=GPL-2
+SLOT=0
+SRC_URI=https://download.inlab.net/Balance/3.57/balance-3.57.tar
+_eclasses_=fcaps	27152c9e4da035accb14a2d7879744ef	flag-o-matic	e8de74bac929ba17427e740e95707d00	toolchain-funcs	f9d71a6efe9d083aec750dd13968e169
+_md5_=2801f39e6d1a0ea030a2a3139d9d2077
