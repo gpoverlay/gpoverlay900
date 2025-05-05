@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{10,11,12} )
+PYTHON_COMPAT=( python3_{10..13} )
 PYTHON_REQ_USE="threads(+),xml(+)"
 
 inherit autotools flag-o-matic linux-info python-single-r1 readme.gentoo-r1 udev
@@ -145,6 +145,9 @@ src_configure() {
 	# https://bugs.gentoo.org/861851
 	# https://bugs.launchpad.net/hplip/+bug/2055371
 	filter-lto
+
+	# https://bugs.gentoo.org/954891
+	append-cflags -std=gnu17
 
 	local drv_build minimal_build
 

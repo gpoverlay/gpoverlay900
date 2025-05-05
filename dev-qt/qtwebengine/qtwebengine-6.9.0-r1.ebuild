@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{10..13} )
+PYTHON_COMPAT=( python3_{11..13} )
 PYTHON_REQ_USE="xml(+)"
 inherit check-reqs flag-o-matic multiprocessing optfeature
 inherit prefix python-any-r1 qt6-build toolchain-funcs
@@ -28,7 +28,6 @@ REQUIRED_USE="
 "
 
 # dlopen: krb5, libva, pciutils
-# gcc: for -latomic
 RDEPEND="
 	app-arch/snappy:=
 	dev-libs/expat
@@ -53,7 +52,6 @@ RDEPEND="
 	media-libs/tiff:=
 	sys-apps/dbus
 	sys-apps/pciutils
-	sys-devel/gcc:*
 	sys-libs/zlib:=[minizip]
 	virtual/libudev:=
 	x11-libs/libX11
@@ -82,11 +80,16 @@ RDEPEND="
 "
 DEPEND="
 	${RDEPEND}
+	|| (
+		sys-devel/gcc:*
+		llvm-runtimes/libatomic-stub
+	)
 	media-libs/libglvnd
 	x11-base/xorg-proto
 	x11-libs/libXcursor
 	x11-libs/libXi
 	x11-libs/libxshmfence
+	elibc_musl? ( sys-libs/queue-standalone )
 	screencast? ( media-libs/libepoxy[egl(+)] )
 	vaapi? (
 		vulkan? ( dev-util/vulkan-headers )

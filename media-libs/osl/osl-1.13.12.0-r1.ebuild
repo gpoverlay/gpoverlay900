@@ -6,7 +6,7 @@ EAPI=8
 PYTHON_COMPAT=( python3_{10..13} )
 
 # Check this on updates
-LLVM_COMPAT=( {15..19} )
+LLVM_COMPAT=( {18..19} )
 
 inherit cmake cuda flag-o-matic llvm-r1 toolchain-funcs python-single-r1
 
@@ -19,7 +19,7 @@ if [[ ${PV} = *9999* ]] ; then
 else
 	# If a development release, please don't keyword!
 	SRC_URI="https://github.com/AcademySoftwareFoundation/OpenShadingLanguage/archive/v${PV}.tar.gz -> ${P}.tar.gz"
-	KEYWORDS="~amd64 ~arm ~arm64 ~ppc64"
+	KEYWORDS="amd64 ~arm ~arm64 ~ppc64"
 	S="${WORKDIR}/OpenShadingLanguage-${PV}"
 fi
 
